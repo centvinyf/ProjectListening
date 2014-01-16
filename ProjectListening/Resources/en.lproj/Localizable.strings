@@ -1,0 +1,172 @@
+/* 
+  Localizable.strings
+  ToeflListening
+
+  Created by zhaozilong on 13-5-10.
+
+*/
+"SYSTEM_LANGUAGE"  =   "LanguageEN";
+
+//公开课
+"TAB_COURSE"                    = "Mobile Course";
+"DELETE_COURSE"                 = "Delete downloaded courses";
+"COURSE_NEED_MEMORY"            = "Course memory";
+
+//资讯
+"BLOG_TOP"                      = "Top";
+
+//初始设定
+"FIRST_SETTINGS"                = "Initialize study plan";
+"USERNAME_OR_EMAIL"             = "Username or Email";
+"CAN_NOT_FIND_WORD"             = "Sorry, no suitable words or phrases.";
+"CAN_NOT_FIND_WORD_SHORT"       = "Sorry, no suitable words or phrases.";
+"EN_CN"                         = "En-Cn";
+"EN_JP"                         = "En-Jp";
+"EN_EN"                         = "En-En";
+"JP_EN"                         = "Jp-En";
+"JP_CN"                         = "Jp-Cn";
+"JP_TCN"                        = "Jp-Tcn";
+"JP_KR"                         = "Jp-Kr";
+"CN_EN"                         = "Cn-En";
+"CN_JP"                         = "Cn-Jp";
+"CN_KR"                         = "Cn-Kr";
+"DEFINE"                        = "Define";
+"DICT_SELECTION"                = "Choose dictionary";
+"DOWNLOAD_FAILED"               = "'s Questions download failed. Please try it again later.";
+"PLEASE_WAIT"                   = "Please wait...";
+"TICKET_MANAGE"                 = "Coupon";
+
+//通用
+"OK"                            = "OK";
+"CANCEL"                        = "Cancel";
+"SORRY"                         = "Sorry";
+"EDIT"                          = "Edit";
+"DONE"                          = "Done";
+
+//同步
+
+"WORDS_NOTEBOOK"                = "Vocabulary";
+"PROUNCE_FAILED"                = "Failure in pronunciation";
+"SYNC"                          = "Synchronize";
+"SYNC_ING"                      = "Synchronizing";
+"SYNC_DONE"                     = "Synchronized";
+"SYNC_FAILED"                   = "Failure in synchronization. Please check the network connection.";
+
+//助理相关
+"DIFFCULTY_SELECTION"           = "Choose intensity";
+"ASSISTANT_SELECTION"           = "Choose assistant";
+"NEXT_DAY_EFFECT"               = "New intensity will take effect the next day";
+"NOTIF_KEN"                     = "Assistant Ken: Hey, my boss! It's time to study. Remember that learning foreign languages well lies in persistence.";
+"NOTIF_KATE"                    = "Assistant Kate: My dear master, it's time for study. Persistence is the key to learning foreign language. I'm waiting for you in the app.";
+"NOTIF_NORMAL"                  = "Assistant: It is study time.";
+"NOTIF_TIME_SELECTION"          = "Daily reminder time";
+
+//反馈界面
+"USER_ADVISE"                   = "Feedback";
+"MESSAGE"                       = "Tips";
+"SENDING_NOT_BACK"              = "Sending message.It will be interrupted if out.";
+"GIVE_UP_SENDING"               = "Interrupted";
+"MSG_1"                         = "Welcome to the feedback. We'll read your suggestions carefully. ";
+"MSG_2"                         = "Please input your email for convenient contact. We promise you it won't be divulged.";
+"MSG_3"                         = "Welcome to the feedback. We'll read your suggestions carefully. ";
+"MSG_4"                         = "Thanks for your valuable suggestions. We Iyuba will read them all carefully.";
+"MSG_5"                         = "Dear ";
+"MSG_6"                         = "You can fill in feedback now.We'll read it seriously.";
+"MSG_7"                         = "Wrong email format. Fill in again please.";
+"MSG_8"                         = "Sending. Wait for a while please.";
+"MSG_9"                         = "Sorry, failed in sending. Check your network connection please.";
+"MSG_10"                        = "Failed in sending. There's something wrong with your network. Try again later or go to study first. We're waiting for your advice. Thank you!";
+"MSG_11"                        = "Sending successfully. Thanks for your feedback. You might go to study right now, for your assistant is waiting.";
+
+//网络连接情况
+"CHECK_INTERNET"                = "Please check your network settings.";
+"BAD_NETWORK"                   = "Poor network";
+"NO_INTERNET"                   = "No internet";
+
+//登陆注册
+"INSERT_USERNAME"               = "Input your user name or email please.";
+"INSERT_PASSWORD"               = "Input password please.";
+"REGISTER"                      = "Register";
+"LOGIN"                         = "Login";
+"REMEBER_PASSWORD"              = "Remember the password";
+"USERNAME_FORMAT"               = "4-10 characters.";
+"PASSWORD_FORMAT"               = "6-12 characters; letters, numbers or underlines are all ok.";
+"INSERT_EMAIL"                  = "Input a valid email please.";
+"HAND_IN"                       = "Submit";
+"LOGOUT"                        = "Logout";
+"CURRENT_USER"                  = "Active user:";
+"REGISTER_SUCCESS"              = "Registered";
+"USER"                          = "User:";
+"REGISTER_FAILED"               = "Registration failed";
+"USERNAME_EXIST"                = "The user name already exists.";
+"EMAIL_EXIST"                   = "The email has been registered.";
+"CANNOT_BLANK"                  = " Non-null";
+"ERROR"                         = "Error";
+"WRONG_USERNAME"                = "Username should be 4-15 characters.";
+"WRONG_PASSWORD"                = "The two passwords don't match.";
+"WRONG_EMAIL"                   = "Input a valid email please.";
+"REGISTER_ING"                  = "Registering";
+"USER_REGISTER"                 = "User registration ";
+"USERNAME"                      = "Username";
+"PASSWORD"                      = "Password";
+"PASSWORD_CONFIRM"              = "Confirm Password";
+"EMAIL"                         = "E-mail";
+"USER_LOGIN"                    = "Login";
+"NO_INFO"                       = "Empty information";
+"REQUEST_USER_INFO"             = "Input your username and password please.";
+"LOGOUT_ING"                    = "Logging off";
+"LOGOUT_SUCCESS"                = "Logged out";
+"LOGIN_FAILED"                  = "Failed login";
+"LOGIN_SUCCESS"                 = "Successful login";
+"WRONG_USER_INFO"               = "Wrong username or password";
+
+//ETC
+"RESTORE_PURCHASE"              = "Restore all purchased items";
+"ENTRY_AGAIN_REMOVE_AD"         = "Notice: no ads when entering again.";
+"ABOUT_IYUBA"                   = "About Iyuba";
+"DELETE_AUDIO"                  = "Delete downloaded test questions.";
+"FAIL_GET_INFO"                 = "Failed to get product information.";
+//"TEST_SET"                      = "Test questions";
+"TEST_SET"                      = "";
+"FAV_TEST"                      = "Questions";
+"ALL_TEST_SET"                  = "All test questions";
+"UPGRADE_VIP"                   = "Upgraded to VIP";
+"MORE_APP"                      = "More Apps";
+"RESTART_DOWLOAD"               = "You can re-download test questions after reboot.";
+"TEST_NEED_MEMORY"              = "Test question memory";
+
+"TAB_PLAN"                      = "Plan";
+"TAB_LIB"                       = "Library";
+"TAB_FAV"                       = "Favorites";
+"TAB_MORE"                      = "Settings";
+"TAB_INFO"                      = "Infomation";
+
+
+//界面任务信息
+"HOW_MANY_QUESTION"             = " Questions";
+"HOW_MANY_ARTICLE"              = " Listennings";
+"CORRECT_RATE"                  = "Accuracy:";
+"QUESTION"                      = " Questions";
+"TIME"                          = "Time:";
+"TOTAL_TIME"                    = "Total Time:";
+"TODAY_TASK"                    = "Today's Task";
+"TASK"                          = "Task";
+"MONTH"                         = ".";
+"DAY"                           = "'s ";
+"HOUR"                          = "h";
+"MIN"                           = "m";
+"SECOND"                        = "s";
+
+/******Store的翻译********/
+"STORE_ALERT_TITLE" = "Message";
+"STORE_ALERT_MSG" = "Not available in App Store";
+"STORE_ALERT_CLOSE" = "Close";
+"STORE_ALERT_CON" = "Thanks";
+"STORE_ALERT_CON_MSG" = "Purchase successed";
+"STORE_ALERT_CON_OK" = "OK";
+"STORE_ALERT_FAIL_TITLE" = "Failed";
+"STORE_ALERT_FAIL_MSG" = "Purchase failed.";
+"STORE_ALERT_FAIL_CLOSE" = "Close";
+"INDICATOR_NET_ERROR" = "Network error";
+"INDICATOR_NET_NOT_CONNECT" = "Network error";
+"SEND" = "Send";

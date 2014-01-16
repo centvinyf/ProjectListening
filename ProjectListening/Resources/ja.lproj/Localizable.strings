@@ -1,0 +1,171 @@
+/* 
+  Localizable.strings
+  ToeflListening
+
+  Created by zhaozilong on 13-5-10.
+
+*/
+"SYSTEM_LANGUAGE"  =   "LanguageJP";
+
+//公开课
+"TAB_COURSE"                    = "Mobile Course";
+"DELETE_COURSE"                 = "ローカルコースのデーターを削除";
+"COURSE_NEED_MEMORY"            = "コースの占める容量";
+
+//资讯
+"BLOG_TOP"                      = "Top";
+
+//初始设定
+"FIRST_SETTINGS"                = "学習計画の初期設定";
+"USERNAME_OR_EMAIL"             = "ユーザー名やメールアドレス";
+"CAN_NOT_FIND_WORD"             = "すみません、見つかりませんでした。";
+"CAN_NOT_FIND_WORD_SHORT"       = "すみません、見つかりませんでした。";
+"EN_CN"                         = "英中";
+"EN_JP"                         = "英日";
+"EN_EN"                         = "英英";
+"JP_EN"                         = "日英";
+"JP_CN"                         = "日中";
+"JP_TCN"                        = "日繁中";
+"JP_KR"                         = "日韓";
+"CN_EN"                         = "中英";
+"CN_JP"                         = "中日";
+"CN_KR"                         = "中韓";
+"DEFINE"                        = "辞書";
+"DICT_SELECTION"                = "辞書選択";
+"DOWNLOAD_FAILED"               = "の問題集がダウンロードに失敗しました、もう一度お試しください。";
+"PLEASE_WAIT"                   = "しばらくお待ちください...";
+"TICKET_MANAGE"                 = "クーポン";
+
+//通用
+"OK"                            = "確認";
+"CANCEL"                        = "キャンセル";
+"SORRY"                         = "抱歉";
+"EDIT"                          = "編集";
+"DONE"                          = "完了";
+
+//同步
+"WORDS_NOTEBOOK"                = "単語帳";
+"PROUNCE_FAILED"                = "再生に失敗しました";
+"SYNC"                          = "同期";
+"SYNC_ING"                      = "同期中...";
+"SYNC_DONE"                     = "同期完成";
+"SYNC_FAILED"                   = "同期に失敗しました";
+
+//助理相关
+"DIFFCULTY_SELECTION"           = "学習コース選択";
+"ASSISTANT_SELECTION"           = "アシスタント選択";
+"NEXT_DAY_EFFECT"               = "選択したコースは明日からの適応となります";
+"NOTIF_KEN"                     = "勉強の時間です！外国語を毎日根気強く頑張れば進歩できます！！";
+"NOTIF_KATE"                    = "勉強の時間ですよ！外国語の勉強は毎日の積み重ねです。桃はいつも待ってますよ。";
+"NOTIF_NORMAL"                  = "勉強の時間です！";
+"NOTIF_TIME_SELECTION"          = "毎日の学習時間を記憶させる";
+
+
+//反馈界面
+"USER_ADVISE"                   = "メッセージボックス";
+"MESSAGE"                       = "注意";
+"SENDING_NOT_BACK"              = "ただいまメールを送っています。今、退出すると送信が中断されます。";
+"GIVE_UP_SENDING"               = "メールの送信の中断";
+"MSG_1"                         = "ご意見ありがとうございます。あなたのフィードバックを読ませていただいております。";
+"MSG_2"                         = "あなたのメールアドレスを入力してください。他の場所に漏れる心配はありません。";
+"MSG_3"                         = "ご意見ありがとうございます。あなたのフィードバックを読ませていただいております。";
+"MSG_4"                         = "ご意見ありがとうございます。愛語バーはあなたの貴重な提案をきちんと読みます。";
+"MSG_5"                         = "親愛なる";
+"MSG_6"                         = "フィードバックを送れます。私たちは真剣にあなたのフィードバックを読ませていただきます。";
+"MSG_7"                         = "メールボックスのフォーマットが正しくないです。";
+"MSG_8"                         = "ただいま送信中です。少々お待ちください。";
+"MSG_9"                         = "すみません、送信に失敗しました。ネットワークに問題があります、ネットワークに繋がっているか確認してください。";
+"MSG_10"                        = "すみません、送信に失敗しました。ネットワークに問題があります。もう少ししてからまた試してください。もしくは、先に勉強をしてから後でまたフィードバックを送って下されば幸いです。";
+"MSG_11"                        = "送信に成功しました。メールで返信いたします。アシスタントがまだ待っております、勉強を続けましょう。";
+
+//网络连接情况
+"CHECK_INTERNET"                = "インターネット接続を確認";
+"BAD_NETWORK"                   = "接続に失敗しました";
+"NO_INTERNET"                   = "インターネットに接続していません";
+
+//登陆注册
+"INSERT_USERNAME"               = "ユーザー名を入力";
+"INSERT_PASSWORD"               = "パスワードを入力";
+"REGISTER"                      = "登録";
+"LOGIN"                         = "ログイン";
+"REMEBER_PASSWORD"              = "パスワードを記録する";
+"USERNAME_FORMAT"               = "４文字から１５文字以内";
+"PASSWORD_FORMAT"               = "6－12文字で、文字と数字を入力";
+"INSERT_EMAIL"                  = "正しいメールアドレスを入力";
+"HAND_IN"                       = "申請";
+"LOGOUT"                        = "ログアウト";
+"CURRENT_USER"                  = "現段階のユーザー:";
+"REGISTER_SUCCESS"              = "登録に成功しました";
+"USER"                          = "ユーザー:";
+"REGISTER_FAILED"               = "登録に失敗しました";
+"USERNAME_EXIST"                = "そのユーザー名は使用されています";
+"EMAIL_EXIST"                   = "メールアドレスが間違えています";
+//"CANNOT_BLANK"                  = "全て埋めてください。";
+"ERROR"                         = "エーラー";
+"WRONG_USERNAME"                = "４文字以上１５文字以下でユーザー名を入力";
+"WRONG_PASSWORD"                = "パスワードが一致していません";
+"WRONG_EMAIL"                   = "正しいメールアドレスを入力";
+"REGISTER_ING"                  = "登録中";
+"USER_REGISTER"                 = "登録";
+"USERNAME"                      = "ユーザー名";
+"PASSWORD"                      = "パスワード";
+"PASSWORD_CONFIRM"              = "パスワードを確認";
+"EMAIL"                         = "メールアドレス";
+"USER_LOGIN"                    = "ログイン";
+"NO_INFO"                       = "情報がありません";
+"REQUEST_USER_INFO"             = "ユーザー名とパスワードを入力";
+"LOGOUT_ING"                    = "ログアウト中";
+"LOGOUT_SUCCESS"                = "ログアウトに成功しました";
+"LOGIN_FAILED"                  = "ログインに失敗しました";
+"LOGIN_SUCCESS"                 = "ログインに成功しました";
+"WRONG_USER_INFO"               = "ユーザー名とパスワードが正しいかご確認ください";
+
+//ETC
+"ABOUT_IYUBA"                   = "愛語バーについて";
+"DELETE_AUDIO"                  = "ローカル問題のデーターを削除";
+"FAIL_GET_INFO"                 = "商品情報の取得に失敗しました";
+"TEST_SET"                      = "試験問題";
+"FAV_TEST"                      = "お気に入り文章";
+"ALL_TEST_SET"                  = "全問";
+"UPGRADE_VIP"                   = "完全版を購入";
+"MORE_APP"                      = "さらに優秀なアプリ";
+"RESTART_DOWLOAD"               = "再起動すると効力を発す";
+"TEST_NEED_MEMORY"              = "試験問題の占める容量";
+"RESTORE_PURCHASE"              = "購入履歴に戻る";
+"ENTRY_AGAIN_REMOVE_AD"         = "リスニングを再開すると広告を消せます";
+
+"TAB_PLAN"                      = "タスク表";
+"TAB_LIB"                       = "問題リスト";
+"TAB_FAV"                       = "お気に入り";
+"TAB_MORE"                      = "設定";
+"TAB_INFO"                      = "関連情報";
+
+
+//界面任务信息
+"HOW_MANY_QUESTION"             = "問";
+"HOW_MANY_ARTICLE"              = "文ヒアリング";
+"CORRECT_RATE"                  = "正答率:";
+"QUESTION"                      = "問";
+"TIME"                          = "時間:";
+"TOTAL_TIME"                    = "合計時間:";
+"TODAY_TASK"                    = "今日のタスク";
+"TASK"                          = "のタスク";
+"MONTH"                         = "月";
+"DAY"                           = "日";
+"HOUR"                          = "時";
+"MIN"                           = "分";
+"SECOND"                        = "秒";
+
+/******Store的翻译********/
+"STORE_ALERT_TITLE" = "メッセージ";
+"STORE_ALERT_MSG" = "App Storeで購入することはできません";
+"STORE_ALERT_CLOSE" = "閉じる";
+"STORE_ALERT_CON" = "ありがとう";
+"STORE_ALERT_CON_MSG" = "お支払いに成功しました";
+"STORE_ALERT_CON_OK" = "閉じる";
+"STORE_ALERT_FAIL_TITLE" = "失敗しました";
+"STORE_ALERT_FAIL_MSG" = "お支払いに失敗しました";
+"STORE_ALERT_FAIL_CLOSE" = "閉じる";
+"INDICATOR_NET_ERROR" = "ネットワークエラー";
+"INDICATOR_NET_NOT_CONNECT" = "ネットワークにつながりません";
+"SEND" = "送信";

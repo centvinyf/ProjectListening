@@ -1,0 +1,171 @@
+/* 
+  Localizable.strings
+  ToeflListening
+
+  Created by zhaozilong on 13-5-10.
+
+*/
+"SYSTEM_LANGUAGE"  =   "LanguageCN";
+
+//公开课
+"TAB_COURSE"                    = "移动课堂";
+"DELETE_COURSE"                 = "删除已下载课程";
+"COURSE_NEED_MEMORY"            = "课程所占容量";
+
+//资讯
+"BLOG_TOP"                      = "回到顶部";
+
+//初始设定
+"FIRST_SETTINGS"                = "学习计划初始设定";
+"USERNAME_OR_EMAIL"             = "用户名或注册邮箱";
+"CAN_NOT_FIND_WORD"             = "抱歉，未找到您想查看的单词或词组(°_°)";
+"CAN_NOT_FIND_WORD_SHORT"       = "词义未找到 (°_°)";
+"EN_CN"                         = "英中";
+"EN_JP"                         = "英日";
+"EN_EN"                         = "英英";
+"JP_EN"                         = "日英";
+"JP_CN"                         = "日中";
+"JP_TCN"                        = "日繁中";
+"JP_KR"                         = "日韩";
+"CN_EN"                         = "中英";
+"CN_JP"                         = "中日";
+"CN_KR"                         = "中韩";
+"DEFINE"                        = "定义";
+"DICT_SELECTION"                = "词典选择";
+"DOWNLOAD_FAILED"               = "试题下载失败,请稍后再试";
+"PLEASE_WAIT"                   = "请稍后...";
+"TICKET_MANAGE"                 = "优惠券";
+
+//通用
+"OK"                            = "好";
+"CANCEL"                        = "取消";
+"SORRY"                         = "抱歉";
+"EDIT"                          = "编辑";
+"DONE"                          = "完成";
+
+//同步
+
+"WORDS_NOTEBOOK"                = "生词本";
+"PROUNCE_FAILED"                = "发音失败";
+"SYNC"                          = "同步";
+"SYNC_ING"                      = "同步中...";
+"SYNC_DONE"                     = "同步完成";
+"SYNC_FAILED"                   = "同步失败，网络不给力啊";
+
+//助理相关
+"DIFFCULTY_SELECTION"           = "强度选择";
+"ASSISTANT_SELECTION"           = "助理选择";
+"NEXT_DAY_EFFECT"               = "设定强度将在第二天生效";
+"NOTIF_KEN"                     = "大椰助理:嘿!老大,到时间学习了。外语学习是要坚持才能看到成绩的哦。";
+"NOTIF_KATE"                    = "小桃助理:主人,学习的时间到了哦。外语学习贵在坚持,我在应用里等着主人哦~";
+"NOTIF_NORMAL"                  = "助理:主人,学习的时间到了哦。";
+"NOTIF_TIME_SELECTION"          = "请选择每日助理提醒您学习的时间";
+
+//反馈界面
+"USER_ADVISE"                   = "意见薄";
+"MESSAGE"                       = "温馨提示";
+"SENDING_NOT_BACK"              = "当前正在发送信息, 现在退出会中断发送";
+"GIVE_UP_SENDING"               = "中断发送";
+"MSG_1"                         = "欢迎来到意见薄, 我们会认真阅读您的反馈";
+"MSG_2"                         = "请输入您的Email地址方便我们联系您, 您的Email地址不会被透露";
+"MSG_3"                         = "欢迎来到意见薄, 我们会认真阅读您的反馈";
+"MSG_4"                         = "亲爱的用户, 欢迎来到意见薄, 爱语吧团队会认真阅读您对我们提出的宝贵建议";
+"MSG_5"                         = "亲爱的";
+"MSG_6"                         = "您现在可以填写反馈信息了, 我们会认真阅读您的反馈信息";
+"MSG_7"                         = "邮箱格式不正确, 请重新填写, 感谢";
+"MSG_8"                         = "正在发送中，请稍后...";
+"MSG_9"                         = "抱歉, 发送失败, 当前网络出现问题, 请查看您的网络是否开启";
+"MSG_10"                        = "抱歉, 发送失败, 网络问题, 请稍后再试, 或者您也可以先去学习, 一会再给我们发反馈, 万分感谢";
+"MSG_11"                        = "发送成功, 谢谢反馈. 您也许现在应该回去学习外语了, 您的助理还在等着呢";
+
+//网络连接情况
+"CHECK_INTERNET"                = "请检查您的网络设置";
+"BAD_NETWORK"                   = "网络貌似不太好哦";
+"NO_INTERNET"                   = "当前未联网";
+
+//登陆注册
+"INSERT_USERNAME"               = "请输入您的用户名或注册邮箱";
+"INSERT_PASSWORD"               = "请输入您的密码";
+"REGISTER"                      = "注册";
+"LOGIN"                         = "登录";
+"REMEBER_PASSWORD"              = "记住密码";
+"USERNAME_FORMAT"               = "4-10个字符，可用中文";
+"PASSWORD_FORMAT"               = "长度6-12，字母数字下划线";
+"INSERT_EMAIL"                  = "请输入有效的Email地址";
+"HAND_IN"                       = "提交";
+"LOGOUT"                        = "注销";
+"CURRENT_USER"                  = "当前用户:";
+"REGISTER_SUCCESS"              = "注册成功";
+"USER"                          = "用户:";
+"REGISTER_FAILED"               = "注册失败";
+"USERNAME_EXIST"                = "用户名已存在";
+"EMAIL_EXIST"                   = "邮箱已被注册";
+"CANNOT_BLANK"                  = "不能为空!";
+"ERROR"                         = "错误";
+"WRONG_USERNAME"                = "用户名长度不符合要求，应在4-15个字符之间";
+"WRONG_PASSWORD"                = "两次输入的密码不一致，请检查";
+"WRONG_EMAIL"                   = "请输入有效的E-mail地址!";
+"REGISTER_ING"                  = "正在注册";
+"USER_REGISTER"                 = "用户注册";
+"USERNAME"                      = "用户名";
+"PASSWORD"                      = "密码";
+"PASSWORD_CONFIRM"              = "确认密码";
+"EMAIL"                         = "E-mail地址";
+"USER_LOGIN"                    = "用户登录";
+"NO_INFO"                       = "用户信息为空";
+"REQUEST_USER_INFO"             = "请输入您的用户名和密码!";
+"LOGOUT_ING"                    = "正在注销";
+"LOGOUT_SUCCESS"                = "注销成功";
+"LOGIN_FAILED"                  = "登录失败";
+"LOGIN_SUCCESS"                 = "登录成功";
+"WRONG_USER_INFO"               = "用户名或密码错误";
+
+//ETC
+"RESTORE_PURCHASE"              = "恢复所有已购买的商品";
+"ENTRY_AGAIN_REMOVE_AD"         = "注:再次进入听力界面方可去除广告";
+"ABOUT_IYUBA"                   = "关于爱语吧";
+"DELETE_AUDIO"                  = "删除已下载试题";
+"FAIL_GET_INFO"                 = "获取商品信息失败";
+"TEST_SET"                      = "试题";
+"FAV_TEST"                      = "试题收藏";
+"ALL_TEST_SET"                  = "全部试题";
+"UPGRADE_VIP"                   = "升级VIP";
+"MORE_APP"                      = "爱语吧应用";
+"RESTART_DOWLOAD"               = "程序重启后可在题库界面重新下载";
+"TEST_NEED_MEMORY"              = "试题所占容量";
+
+"TAB_PLAN"                      = "计划";
+"TAB_LIB"                       = "题库";
+"TAB_FAV"                       = "收藏";
+"TAB_MORE"                      = "设置";
+"TAB_INFO"                      = "资讯";
+
+
+//界面任务信息
+"HOW_MANY_QUESTION"             = "道题";
+"HOW_MANY_ARTICLE"              = "篇听力";
+"CORRECT_RATE"                  = "正确比例:";
+"QUESTION"                      = "题";
+"TIME"                          = "时长:";
+"TOTAL_TIME"                    = "总时长:";
+"TODAY_TASK"                    = "今日任务";
+"TASK"                          = "任务";
+"MONTH"                         = "月";
+"DAY"                           = "日";
+"HOUR"                          = "小时";
+"MIN"                           = "分";
+"SECOND"                        = "秒";
+
+/******Store的翻译********/
+"STORE_ALERT_TITLE"             = "提示";
+"STORE_ALERT_MSG"               = "Not available in App Store";
+"STORE_ALERT_CLOSE"             = "关闭";
+"STORE_ALERT_CON"               = "谢谢";
+"STORE_ALERT_CON_MSG"           = "支付成功";
+"STORE_ALERT_CON_OK"            = "好";
+"STORE_ALERT_FAIL_TITLE"        = "失败";
+"STORE_ALERT_FAIL_MSG"          = "购买失败";
+"STORE_ALERT_FAIL_CLOSE"        = "关闭";
+"INDICATOR_NET_ERROR"           = "网络链接错误";
+"INDICATOR_NET_NOT_CONNECT"     = "网络链接错误";
+"SEND"                          = "发送";
