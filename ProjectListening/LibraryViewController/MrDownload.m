@@ -140,7 +140,7 @@
         
         
         /************************不是所有考试听力都通用*******************************/
-        if ([TestType isToefl]) {
+        if ([TestType isToefl] || [TestType isCET4]) {
             //问题音频名称
             sel = [NSString stringWithFormat:@"SELECT Sound FROM Answer WHERE TitleNum = %d", titleNum];
             
@@ -241,6 +241,8 @@
     } else if ([TestType isTEM4]) {
         int titleNum = [[audioName stringByDeletingPathExtension] intValue];
         audioURL = [NSURL URLWithString:[NSString stringWithFormat:@"%@%d/%@", AUDIO_DOWNLOAD_URL, titleNum / 100, audioName]];
+    } else if ([TestType isCET4]) {
+        NSAssert(NO, @"四六级下载链接");
     } else {
         NSAssert(NO, @"没有正确的下载地址");
     }

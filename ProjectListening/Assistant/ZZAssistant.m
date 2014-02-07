@@ -186,7 +186,7 @@
                 } else if ([TestType isTEM4]) {
                     return AMTagsSkillTEM4;
                 } else {
-                    NSAssert(NO, @"没有正确的考试类型,助理的话语");
+//                    NSAssert(NO, @"没有正确的考试类型,助理的话语");
                     return AMTagsSayings;
                 }
                 break;

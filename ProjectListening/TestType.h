@@ -87,6 +87,8 @@ typedef enum {
     PartType6062,       //问题，选择
     PartType6063,       //问题，选择
     PartType9401 = 9401,//四级partA
+    PartType9402,
+    PartType9403,
     PartTypeMAX,
 }PartTypeTags;
 
@@ -121,6 +123,7 @@ typedef enum {
 + (BOOL)isJLPTN1;
 + (BOOL)isJLPTN2;
 + (BOOL)isJLPTN3;
++ (BOOL)isCET4;
 
 + (UIColor *)colorWithTestType;
 + (NSString *)partNameWithPartType:(PartTypeTags)partType;

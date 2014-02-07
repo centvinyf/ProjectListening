@@ -29,7 +29,7 @@
 }
 
 + (BOOL)isEnglishTest {
-    return (TEST_TYPE == TestTypeToefl || TEST_TYPE == TestTypeToeic || TEST_TYPE == TestTypeTEM4);
+    return (TEST_TYPE == TestTypeToefl || TEST_TYPE == TestTypeToeic || TEST_TYPE == TestTypeTEM4 || TEST_TYPE == TestTypeCET4);
 }
 
 + (BOOL)isChineseTest {
@@ -96,6 +96,10 @@
     return (TEST_TYPE == TestTypeTEM4);
 }
 
++ (BOOL)isCET4 {
+    return (TEST_TYPE == TestTypeCET4);
+}
+
 + (UIColor *)colorWithTestType {
     UIColor *color = nil;
 //    CGFloat cRed = 0.0, cGreen = 0.0, cBlue = 0.0;
@@ -131,6 +135,7 @@
             break;
             
         case TestTypeTEM4:
+            case TestTypeCET4:
             color = [UIColor colorWithRed:0.627 green:0.306 blue:0.694 alpha:1.0];
             break;
             
@@ -235,6 +240,16 @@
             name = NSLocalizedString(@"第四部分", nil);
             break;
             
+            case PartType9401:
+            name = NSLocalizedString(@"Section A", nil);
+            break;
+            case PartType9402:
+            name = NSLocalizedString(@"Section B", nil);
+            break;
+            case PartType9403:
+            name = NSLocalizedString(@"Section C", nil);
+            break;
+            
         case PartTypeMAX:
             name = NSLocalizedString(@"ALL_TEST_SET", @"全部试题");
             break;
@@ -267,6 +282,7 @@
         case TestTypeHSK5:
         case TestTypeHSK6:
         case TestTypeTEM4:
+        case TestTypeCET4:
             isHas = NO;
             break;
         default:
@@ -306,6 +322,7 @@
         case TestTypeHSK5:
         case TestTypeHSK6:
         case TestTypeTEM4:
+            case TestTypeCET4:
             courseID = @"0";
             break;
         default:
@@ -337,7 +354,6 @@
             testInfoID = @"295451";
 //            testInfoID = @"242141";
             break;
-            case TestTypeCET4:
             
             
             
@@ -348,6 +364,7 @@
         case TestTypeHSK5:
         case TestTypeHSK6:
         case TestTypeTEM4:
+            case TestTypeCET4:
             testInfoID = @"0";
             break;
         default:
@@ -390,6 +407,7 @@
         case TestTypeHSK5:
         case TestTypeHSK6:
         case TestTypeTEM4:
+            case TestTypeCET4:
             appID = @"0";
             break;
         default:
@@ -417,6 +435,7 @@
         case TestTypeHSK5:
         case TestTypeHSK6:
         case TestTypeTEM4:
+            case TestTypeCET4:
             return NO;
         default:
             NSAssert(NO, @"没有正确的考试类型");

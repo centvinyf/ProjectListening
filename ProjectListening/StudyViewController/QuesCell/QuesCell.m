@@ -118,7 +118,7 @@
 - (void)addQuesPlayBtnToCell {
     
     //Toeic没有题目播放按钮
-    if (![TestType isToefl]) {
+    if (![TestType isToefl] && ![TestType isCET4]) {
         [self.quesPlayBtn setHidden:YES];
         return;
     }

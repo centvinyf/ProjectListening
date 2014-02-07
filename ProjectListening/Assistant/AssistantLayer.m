@@ -105,8 +105,11 @@
                 color = ccc4(247, 150, 0, 255);
                 break;
             case TestTypeTEM4:
+            case TestTypeCET4:
                 color = ccc4(160, 78, 178, 255);
                 break;
+                
+                
             default:
                 NSAssert(NO, @"没有正确的考试类型，助理的颜色不对");
                 break;

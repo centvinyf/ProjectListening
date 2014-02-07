@@ -34,7 +34,7 @@
 		<string>Icon-Small@2x.png</string>
 	</array>
 	<key>CFBundleIdentifier</key>
-	<string>com.iyuba.JLPT1ListeningFREE</string>
+	<string>com.iyuba.CET4Listening</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
