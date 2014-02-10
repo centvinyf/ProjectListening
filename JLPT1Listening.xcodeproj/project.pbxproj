@@ -418,6 +418,8 @@
 		00C3F5BE17EAF97E009C9B42 /* c-2-1-ios7~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 00C3F5BD17EAF97E009C9B42 /* c-2-1-ios7~ipad.png */; };
 		00CADE7217EFEC210094DAB3 /* TestInfo.plist in Resources */ = {isa = PBXBuildFile; fileRef = 00CADE7117EFEC210094DAB3 /* TestInfo.plist */; };
 		00F6BF64186969F4009C725D /* CouseClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 00F6BF63186969F4009C725D /* CouseClass.m */; };
+		2C916CF918A8A30000FE0AB6 /* CET4Cell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C916CF818A8A30000FE0AB6 /* CET4Cell.m */; };
+		2C916CFB18A8A33400FE0AB6 /* CET4Cell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C916CFA18A8A33400FE0AB6 /* CET4Cell.xib */; };
 		2CB370511889185B00BDD864 /* Icon-120.png in Resources */ = {isa = PBXBuildFile; fileRef = 2CB36EB11889185A00BDD864 /* Icon-120.png */; };
 		2CB370521889185B00BDD864 /* Icon-72.png in Resources */ = {isa = PBXBuildFile; fileRef = 2CB36EB21889185A00BDD864 /* Icon-72.png */; };
 		2CB370531889185B00BDD864 /* Icon-72@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2CB36EB31889185A00BDD864 /* Icon-72@2x.png */; };
@@ -1512,6 +1514,9 @@
 		00CADE7117EFEC210094DAB3 /* TestInfo.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = TestInfo.plist; sourceTree = "<group>"; };
 		00F6BF62186969F4009C725D /* CouseClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CouseClass.h; sourceTree = "<group>"; };
 		00F6BF63186969F4009C725D /* CouseClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CouseClass.m; sourceTree = "<group>"; };
+		2C916CF718A8A30000FE0AB6 /* CET4Cell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CET4Cell.h; sourceTree = "<group>"; };
+		2C916CF818A8A30000FE0AB6 /* CET4Cell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CET4Cell.m; sourceTree = "<group>"; };
+		2C916CFA18A8A33400FE0AB6 /* CET4Cell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CET4Cell.xib; sourceTree = "<group>"; };
 		2CB36EB11889185A00BDD864 /* Icon-120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-120.png"; sourceTree = "<group>"; };
 		2CB36EB21889185A00BDD864 /* Icon-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-72.png"; sourceTree = "<group>"; };
 		2CB36EB31889185A00BDD864 /* Icon-72@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-72@2x.png"; sourceTree = "<group>"; };
@@ -3838,6 +3843,9 @@
 				DB193C8917ACFDA9009FC70D /* HSKCell.h */,
 				DB193C8A17ACFDA9009FC70D /* HSKCell.m */,
 				DB193C8C17ACFDB5009FC70D /* HSKCell.xib */,
+				2C916CF718A8A30000FE0AB6 /* CET4Cell.h */,
+				2C916CF818A8A30000FE0AB6 /* CET4Cell.m */,
+				2C916CFA18A8A33400FE0AB6 /* CET4Cell.xib */,
 			);
 			path = QuesCell;
 			sourceTree = "<group>";
@@ -4410,7 +4418,6 @@
 				7BA157CD1771ACEC00FEBFC9 /* VIPStoreViewController */,
 				7B5FE5EA171E58E6006866DC /* InStoreViewController */,
 				00971CD817ED6853006A5CF3 /* SVRegistByPhoneViewController */,
-				00971CF417ED6853006A5CF3 /* LoginViewController */,
 				7B8671BA1742565300C910FD /* Settings */,
 				7BDF8AE416E4A0950041A621 /* libs */,
 				7BDF8C0816E4A0D80041A621 /* Supporting Files */,
@@ -4421,6 +4428,7 @@
 		7BDF8ACC16E4A0910041A621 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				00971CF417ED6853006A5CF3 /* LoginViewController */,
 				7B250390176EE78100C01B70 /* PlusData */,
 				7B5BA8B41764843A00E472DA /* UserInterface */,
 				7B8672771742581000C910FD /* Assistant */,
@@ -5461,6 +5469,7 @@
 				00C3F59F17EAF226009C9B42 /* pause@2x~ipad.png in Resources */,
 				00C3F4B817EAF226009C9B42 /* easyBtn.png in Resources */,
 				2CB3715E1889185B00BDD864 /* barIndicator@2x~ipad.png in Resources */,
+				2C916CFB18A8A33400FE0AB6 /* CET4Cell.xib in Resources */,
 				2CB370521889185B00BDD864 /* Icon-72.png in Resources */,
 				00C3F4C017EAF226009C9B42 /* hardBtn.png in Resources */,
 				00C3F51717EAF226009C9B42 /* quesPlay0~ipad.png in Resources */,
@@ -5700,6 +5709,7 @@
 				7B86718A1742535400C910FD /* RootViewController.m in Sources */,
 				7B8671AA1742543A00C910FD /* ExplainCell.m in Sources */,
 				7B8671AC1742543A00C910FD /* ParentCell.m in Sources */,
+				2C916CF918A8A30000FE0AB6 /* CET4Cell.m in Sources */,
 				7B8671AD1742543A00C910FD /* TextCell.m in Sources */,
 				7B8671AF1742543A00C910FD /* ExplainTableView.m in Sources */,
 				7B8671B11742543A00C910FD /* JLPTImageCell.m in Sources */,

@@ -192,16 +192,16 @@
         <image name="blueLine.png" width="320" height="11"/>
         <image name="grayLine.png" width="320" height="2"/>
         <image name="nextSen.png" width="60" height="38"/>
-        <image name="nextSen_hl.png" width="55" height="38"/>
+        <image name="nextSen_hl.png" width="60" height="38"/>
         <image name="nextTitle.png" width="67" height="38"/>
-        <image name="nextTitle_hl.png" width="55" height="38"/>
+        <image name="nextTitle_hl.png" width="67" height="38"/>
         <image name="normalSpeed.png" width="45" height="38"/>
         <image name="pause.png" width="60" height="38"/>
-        <image name="pause_hl.png" width="55" height="38"/>
+        <image name="pause_hl.png" width="60" height="38"/>
         <image name="playBG.png" width="320" height="52"/>
         <image name="prevSen.png" width="60" height="38"/>
-        <image name="prevSen_hl.png" width="55" height="38"/>
+        <image name="prevSen_hl.png" width="60" height="38"/>
         <image name="prevTitle.png" width="67" height="38"/>
-        <image name="prevTitle_hl.png" width="55" height="38"/>
+        <image name="prevTitle_hl.png" width="67" height="38"/>
     </resources>
 </document>
