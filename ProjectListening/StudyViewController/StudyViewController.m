@@ -600,6 +600,15 @@ typedef enum {
     if ([TestType isToeic]) {
         return YES;
     }
+    if([TestType isCET4]){
+        if (TAQ.partType == 9403) {
+            return NO;
+        }else if( TAQ.partType == 9401 || TAQ.partType == 9402){
+            return YES;
+            
+        }
+    }
+
     switch ([TestType systemLanguage]) {
         case LanguageCN:
             if (TAQ.isCNExplain) return YES;
@@ -619,7 +628,7 @@ typedef enum {
 //    if (TAQ.isENExplain || TAQ.isJPExplain || TAQ.isCNExplain/* || YES*/) {
 //        return YES;
 //    }
-    return NO;
+        return NO;
 }
 
 - (void)viewDidUnload {
@@ -1589,7 +1598,7 @@ typedef enum {
         /*******取得问题信息*************/
         sqlite3_stmt *stmtAnswer;
         //get Answer
-        NSString *getAnswer = [NSString stringWithFormat:@"SELECT QuesText, QuesImage, AnswerNum, Sound, IsSingle, AnswerText, Answer, QuesIndex FROM Answer WHERE TestType = %d AND TitleNum = %d AND QuesIndex > 0 AND QuesIndex <= %d ORDER BY QuesIndex;", TEST_TYPE, num, quesNum];
+        NSString *getAnswer = [NSString stringWithFormat:@"SELECT QuesText, QuesImage, AnswerNum, Sound, IsSingle, AnswerText, Answer, QuesIndex , KeyWord1, KeyWord2 , KeyWord3 FROM Answer WHERE TestType = %d AND TitleNum = %d AND QuesIndex > 0 AND QuesIndex <= %d ORDER BY QuesIndex;", TEST_TYPE, num, quesNum];
         if (sqlite3_prepare_v2(_database, [getAnswer UTF8String], -1, &stmtAnswer, nil) != SQLITE_OK) {
             sqlite3_close(_database);
             NSAssert(NO, @"查询句子信息失败");
@@ -1599,7 +1608,7 @@ typedef enum {
         NSArray *quesImgNameArray = nil;
         int answerNum;
         NSString *quesSoundName = @"";
-        //        BOOL isSingle = YES;
+        BOOL isSingle = YES;
         NSMutableArray *ansTextArray = [NSMutableArray array];
         NSMutableArray *answerArray = nil;
         NSMutableArray *selectArray = nil;
@@ -1628,30 +1637,39 @@ typedef enum {
             if (qSoundName != NULL) {
                 quesSoundName = [NSString stringWithUTF8String:(char *)sqlite3_column_text(stmtAnswer, 3)];
             }
-//            isSingle = (sqlite3_column_int(stmtAnswer, 4) == 1 ? YES : NO);
             
-            ansText = (char *)sqlite3_column_text(stmtAnswer, 5);
-            if (ansText != NULL) {
-                ansTextArray = (NSMutableArray *)[[NSString stringWithUTF8String:ansText] componentsSeparatedByString:SEPARATE_SYMBOL];
+            isSingle = (sqlite3_column_int(stmtAnswer, 4) == 1 ? YES : NO);
+            if(isSingle){
+                ansText = (char *)sqlite3_column_text(stmtAnswer, 5);
+                if (ansText != NULL) {
+                    ansTextArray = (NSMutableArray *)[[NSString stringWithUTF8String:ansText] componentsSeparatedByString:SEPARATE_SYMBOL];
+                }
+                
+                answerArray = (NSMutableArray *)[[NSString stringWithUTF8String:(char *)sqlite3_column_text(stmtAnswer, 6)] componentsSeparatedByString:SEPARATE_SYMBOL];
+                
+                //初始化用户的选择数组
+                selectArray = [NSMutableArray arrayWithCapacity:answerNum];
+                for (int i = 0; i < answerNum; i++) {
+                    [selectArray addObject:[NSNumber numberWithBool:NO]];
+                }
+                
+                [TAQ.quesTextArray addObject:quesText];
+                //            [TAQ.quesImgNameArray addObject:quesImgNameArray];
+                TAQ.quesImgNameArray = quesImgNameArray;
+                [TAQ.quesSoundNameArray addObject:quesSoundName];
+                [TAQ.ansNumArray addObject:[NSNumber numberWithInt:answerNum]];
+                [TAQ.ansIsSingleArray addObject:[NSNumber numberWithBool:isSingle]];
+                [TAQ.ansTextArray addObject:ansTextArray];
+                [TAQ.answerArray addObject:answerArray];
+                [TAQ.selectArray addObject:selectArray];
+            }else{
+                NSString *correctanswer = sqlite3_column_text(stmtAnswer, 6);
+                NSString *keyword1 = sqlite3_column_text(stmtAnswer, 8);
+                NSString *keyword2 = sqlite3_column_text(stmtAnswer, 9);
+                NSString *keyword3 = sqlite3_column_text(stmtAnswer, 10);
+                NSString *useranswer = @"";
             }
             
-            answerArray = (NSMutableArray *)[[NSString stringWithUTF8String:(char *)sqlite3_column_text(stmtAnswer, 6)] componentsSeparatedByString:SEPARATE_SYMBOL];
-            
-            //初始化用户的选择数组
-            selectArray = [NSMutableArray arrayWithCapacity:answerNum];
-            for (int i = 0; i < answerNum; i++) {
-                [selectArray addObject:[NSNumber numberWithBool:NO]];
-            }
-            
-            [TAQ.quesTextArray addObject:quesText];
-//            [TAQ.quesImgNameArray addObject:quesImgNameArray];
-            TAQ.quesImgNameArray = quesImgNameArray;
-            [TAQ.quesSoundNameArray addObject:quesSoundName];
-            [TAQ.ansNumArray addObject:[NSNumber numberWithInt:answerNum]];
-            //            [TAQ.ansIsSingleArray addObject:[NSNumber numberWithBool:isSingle]];
-            [TAQ.ansTextArray addObject:ansTextArray];
-            [TAQ.answerArray addObject:answerArray];
-            [TAQ.selectArray addObject:selectArray];
             
         }
         sqlite3_finalize(stmtAnswer);
@@ -2326,6 +2344,9 @@ typedef enum {
     
     return cell;
 }
+
+//CET4的Cell
+
 
 #pragma mark - audioPlayerDelegate
 - (void)setQuesAudioStop {

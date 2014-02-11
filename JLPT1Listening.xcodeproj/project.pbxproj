@@ -419,7 +419,6 @@
 		00CADE7217EFEC210094DAB3 /* TestInfo.plist in Resources */ = {isa = PBXBuildFile; fileRef = 00CADE7117EFEC210094DAB3 /* TestInfo.plist */; };
 		00F6BF64186969F4009C725D /* CouseClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 00F6BF63186969F4009C725D /* CouseClass.m */; };
 		2C916CF918A8A30000FE0AB6 /* CET4Cell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C916CF818A8A30000FE0AB6 /* CET4Cell.m */; };
-		2C916CFB18A8A33400FE0AB6 /* CET4Cell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C916CFA18A8A33400FE0AB6 /* CET4Cell.xib */; };
 		2CB370511889185B00BDD864 /* Icon-120.png in Resources */ = {isa = PBXBuildFile; fileRef = 2CB36EB11889185A00BDD864 /* Icon-120.png */; };
 		2CB370521889185B00BDD864 /* Icon-72.png in Resources */ = {isa = PBXBuildFile; fileRef = 2CB36EB21889185A00BDD864 /* Icon-72.png */; };
 		2CB370531889185B00BDD864 /* Icon-72@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2CB36EB31889185A00BDD864 /* Icon-72@2x.png */; };
@@ -738,6 +737,7 @@
 		2CB3725A1889222E00BDD864 /* Q45.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2CB371F21889222E00BDD864 /* Q45.mp3 */; };
 		2CB3725B1889222E00BDD864 /* Q46.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2CB371F31889222E00BDD864 /* Q46.mp3 */; };
 		2CB3725D1889242200BDD864 /* CET4Listening.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 2CB3725C1889242200BDD864 /* CET4Listening.sqlite */; };
+		2CB4B22818AA1C1E005344F9 /* CET4Cell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2CB4B22718AA1C1E005344F9 /* CET4Cell.xib */; };
 		7B002BFB1715AA4B009088A2 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B002BFA1715AA4B009088A2 /* libxml2.dylib */; };
 		7B002BFD1715AA5A009088A2 /* libicucore.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B002BFC1715AA5A009088A2 /* libicucore.dylib */; };
 		7B002BFF1715AA6C009088A2 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B002BFE1715AA6C009088A2 /* libz.dylib */; };
@@ -1516,7 +1516,6 @@
 		00F6BF63186969F4009C725D /* CouseClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CouseClass.m; sourceTree = "<group>"; };
 		2C916CF718A8A30000FE0AB6 /* CET4Cell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CET4Cell.h; sourceTree = "<group>"; };
 		2C916CF818A8A30000FE0AB6 /* CET4Cell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CET4Cell.m; sourceTree = "<group>"; };
-		2C916CFA18A8A33400FE0AB6 /* CET4Cell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CET4Cell.xib; sourceTree = "<group>"; };
 		2CB36EB11889185A00BDD864 /* Icon-120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-120.png"; sourceTree = "<group>"; };
 		2CB36EB21889185A00BDD864 /* Icon-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-72.png"; sourceTree = "<group>"; };
 		2CB36EB31889185A00BDD864 /* Icon-72@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-72@2x.png"; sourceTree = "<group>"; };
@@ -1888,6 +1887,7 @@
 		2CB371F21889222E00BDD864 /* Q45.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Q45.mp3; sourceTree = "<group>"; };
 		2CB371F31889222E00BDD864 /* Q46.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Q46.mp3; sourceTree = "<group>"; };
 		2CB3725C1889242200BDD864 /* CET4Listening.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; name = CET4Listening.sqlite; path = ../../../../../../Github/Database/CET4Listening.sqlite; sourceTree = "<group>"; };
+		2CB4B22718AA1C1E005344F9 /* CET4Cell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CET4Cell.xib; sourceTree = "<group>"; };
 		7B002BFA1715AA4B009088A2 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
 		7B002BFC1715AA5A009088A2 /* libicucore.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libicucore.dylib; path = usr/lib/libicucore.dylib; sourceTree = SDKROOT; };
 		7B002BFE1715AA6C009088A2 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
@@ -3845,7 +3845,7 @@
 				DB193C8C17ACFDB5009FC70D /* HSKCell.xib */,
 				2C916CF718A8A30000FE0AB6 /* CET4Cell.h */,
 				2C916CF818A8A30000FE0AB6 /* CET4Cell.m */,
-				2C916CFA18A8A33400FE0AB6 /* CET4Cell.xib */,
+				2CB4B22718AA1C1E005344F9 /* CET4Cell.xib */,
 			);
 			path = QuesCell;
 			sourceTree = "<group>";
@@ -5469,7 +5469,7 @@
 				00C3F59F17EAF226009C9B42 /* pause@2x~ipad.png in Resources */,
 				00C3F4B817EAF226009C9B42 /* easyBtn.png in Resources */,
 				2CB3715E1889185B00BDD864 /* barIndicator@2x~ipad.png in Resources */,
-				2C916CFB18A8A33400FE0AB6 /* CET4Cell.xib in Resources */,
+				2CB4B22818AA1C1E005344F9 /* CET4Cell.xib in Resources */,
 				2CB370521889185B00BDD864 /* Icon-72.png in Resources */,
 				00C3F4C017EAF226009C9B42 /* hardBtn.png in Resources */,
 				00C3F51717EAF226009C9B42 /* quesPlay0~ipad.png in Resources */,
