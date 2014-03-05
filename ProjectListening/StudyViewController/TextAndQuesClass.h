@@ -50,16 +50,17 @@
 @property (retain, nonatomic) NSMutableArray *ansIsSingleArray;
 
 //for Non-Choice Questions
-@property (retain, nonatomic) NSString       *KeyWord1;
-@property (retain, nonatomic) NSString       *KeyWord2;
-@property (retain, nonatomic) NSString       *KeyWord3;
-@property (retain, nonatomic) NSString       *CorrectAnswer;
-@property (retain, nonatomic) NSString       *UserAnswer;
+@property (retain, nonatomic) NSMutableArray       *KeyWords;
+@property (retain, nonatomic) NSMutableArray       *CorrectAnswer;
+@property (retain, nonatomic) NSMutableArray       *UserAnswer;
+@property (retain, nonatomic) NSMutableArray       *HelperTextArray;
 
 //select
 @property (retain, nonatomic) NSMutableArray *selectArray;
 
 
+//是不是单选题
+@property (retain, nonatomic) NSMutableArray *IsQuestionSingle;
 
 //favorite sentence
 //@property (retain, nonatomic) NSMutableArray *favSenArray;

@@ -262,7 +262,9 @@
             //音频都是1_01.m4a的形式的
             NSString *name = [packName stringByReplacingOccurrencesOfString:@"Test" withString:@""];
             audioName = [name stringByAppendingFormat:@"_%@", audioName];
-        }
+        }else
+            
+        
         audioPath = [ZZAcquirePath getBundleDirectoryWithFileName:audioName];
         
     } else {
@@ -302,6 +304,71 @@
     //设置slider初值
     _audioSlider.maximumValue = _audioPlayer.duration;
 }
+
+-(void) PlayCsoundwithAudioName:(NSString *)audioName packName:(NSString *)packName isFree:(BOOL)isFree timeArray:(NSMutableArray *)timingArray lastTimePoint:(NSTimeInterval)playTime  {
+    
+    _currTimeNum = 0;
+    
+    _lastTime = -1.0;
+    
+    //时间点数组
+    _timingArray = [timingArray copy];
+    
+    //如果上一个音频没播放完，先停止
+    if (_audioPlayer) {
+        [_audioPlayer stop];
+        [_audioPlayer setDelegate:nil];
+        [_audioPlayer release], _audioPlayer = nil;
+    }
+    NSString *audioPath = nil;
+    if (isFree) {//音频再bundle下
+        
+                audioPath = [ZZAcquirePath getBundleDirectoryWithFileName:audioName];
+//        packName = [packName stringByReplacingOccurrencesOfString:@"年" withString:@""];
+//        packName = [packName stringByReplacingOccurrencesOfString:@"月" withString:@""];
+       // audioPath = [ZZAcquirePath getAudioDocDirectoryWithFileName:[NSString stringWithFormat:@"%@/%@", packName, audioName]];
+
+    } else {
+//        packName = [packName stringByReplacingOccurrencesOfString:@"年" withString:@""];
+//        packName = [packName stringByReplacingOccurrencesOfString:@"月" withString:@""];
+//        audioPath = [ZZAcquirePath getAudioDocDirectoryWithFileName:audioName];
+        audioPath = [ZZAcquirePath getAudioDocDirectoryWithFileName:[NSString stringWithFormat:@"%@/%@", packName, audioName]];
+    }
+    
+    //加载音频
+    NSURL *audioDir = [NSURL fileURLWithPath:audioPath];
+    
+    //静音播放
+    [[AVAudioSession sharedInstance] setCategory:AVAudioSessionCategoryPlayback error:nil];
+    [[AVAudioSession sharedInstance] setActive: YES error:nil];
+    _audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:audioDir error:NULL];
+    [_audioPlayer setDelegate:self];
+    
+    //设置slider初值
+    //    _audioSlider.maximumValue = _audioPlayer.duration;
+    //    NSLog(@"play 之前%f,,,%f", _audioSlider.maximumValue, _audioPlayer.duration);
+    
+    [_audioPlayer setEnableRate:YES];
+    [_audioPlayer prepareToPlay];
+    
+    //显示音频总时间
+    //    [_audioTotalLabel setText:[NSString stringWithFormat:@"/%@", [ZZAudioPlayer timeToSwitchAdvance:_audioPlayer.duration]]];
+    
+    [_audioPlayer play];
+    [self recheckRateBtnState];
+    [_playBtn setImage:_pauseImg forState:UIControlStateNormal];
+    [_playBtn setImage:_pauseHLImg forState:UIControlStateHighlighted];
+    //    [_audioPlayer setRate:0.7f];
+    //1.3;  0.7;  1.0f
+    //    [_audioPlayer set]
+    
+    //记录上次播放时间
+    [_audioPlayer setCurrentTime:playTime];
+    
+    //设置slider初值
+    _audioSlider.maximumValue = _audioPlayer.duration;
+}
+
 
 
 // Update the slider about the music time

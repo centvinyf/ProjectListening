@@ -1,8 +1,8 @@
 /* 
   Localizable.strings
-  ToeflListening
+  CET4Listening
 
-  Created by zhaozilong on 13-5-10.
+  Created by Sylar on 14-3-4.
 
 */
 "SYSTEM_LANGUAGE"  =   "LanguageCN";
@@ -14,6 +14,7 @@
 
 //资讯
 "BLOG_TOP"                      = "回到顶部";
+
 
 //初始设定
 "FIRST_SETTINGS"                = "学习计划初始设定";
@@ -169,3 +170,9 @@
 "INDICATOR_NET_ERROR"           = "网络链接错误";
 "INDICATOR_NET_NOT_CONNECT"     = "网络链接错误";
 "SEND"                          = "发送";
+
+//填空题
+"CONGRATULATIONS"               = "正确！";
+"SORRY_FIGHT"                   = "错误，请再试一次！";
+"RIGHTNUMBER"                   = "您答对的关键词数为：";
+"KEY_WORDS_ARE"                 = "这道题的关键词有：";

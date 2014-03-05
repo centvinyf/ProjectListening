@@ -401,6 +401,7 @@
             sel = [NSString stringWithFormat:@"%@WHERE PackName = '%@' ORDER BY TitleNum", partSel, _packName];
         } else {
             //判断JLPT是否是有图题的301，302，303
+            //去掉了下句查询语句的ORDER BY TitleNum
             if ([TestType isJLPT] && (self.partType == PartType301 || self.partType == PartType302 || self.partType == PartType303)) {
                 sel = [NSString stringWithFormat:@"%@WHERE PackName = '%@' AND (PartType = 301 OR PartType = 302 OR PartType = 303) ORDER BY TitleNum", partSel, _packName];
             } else {

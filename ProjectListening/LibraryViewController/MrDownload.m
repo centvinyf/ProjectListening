@@ -142,6 +142,13 @@
         /************************不是所有考试听力都通用*******************************/
         if ([TestType isToefl] || [TestType isCET4]) {
             //问题音频名称
+            NSString *C1 = @"C1.mp3";
+            NSString *C2 = @"C2.mp3";
+            NSString *C3 = @"C3.mp3";
+            
+            [audioNameArray addObject:C1];
+            [audioNameArray addObject:C2];
+            [audioNameArray addObject:C3];
             sel = [NSString stringWithFormat:@"SELECT Sound FROM Answer WHERE TitleNum = %d", titleNum];
             
             sqlite3_stmt *stmt_ques;
@@ -242,8 +249,10 @@
         int titleNum = [[audioName stringByDeletingPathExtension] intValue];
         audioURL = [NSURL URLWithString:[NSString stringWithFormat:@"%@%d/%@", AUDIO_DOWNLOAD_URL, titleNum / 100, audioName]];
     } else if ([TestType isCET4]) {
-        int titleNum = [[audioName stringByDeletingPathExtension] intValue];
-        audioURL = [NSURL URLWithString:[NSString stringWithFormat:@"%@%d/%@", AUDIO_DOWNLOAD_URL, titleNum / 100, audioName]];
+        //int titleNum
+//        NSArray * ar = self.titleNumArray;
+       NSNumber *audiopath =  [self.titleNumArray objectAtIndex:0];
+       audioURL = [NSURL URLWithString:[NSString stringWithFormat:@"%@%d/%@", AUDIO_DOWNLOAD_URL, [audiopath intValue]/100, audioName]];
     } else {
         NSAssert(NO, @"没有正确的下载地址");
     }

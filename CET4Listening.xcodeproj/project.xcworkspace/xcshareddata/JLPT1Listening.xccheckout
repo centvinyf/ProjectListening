@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>AB21280D-347C-43E4-9D52-A4EAFE57CE61</string>
+	<key>IDESourceControlProjectName</key>
+	<string>JLPT1Listening</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>1FA15FE7-5905-4720-A593-C92A84453FCF</key>
+		<string>https://github.com/centvinyf/ProjectListening.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>JLPT1Listening.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>1FA15FE7-5905-4720-A593-C92A84453FCF</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/centvinyf/ProjectListening.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>1FA15FE7-5905-4720-A593-C92A84453FCF</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>1FA15FE7-5905-4720-A593-C92A84453FCF</string>
+			<key>IDESourceControlWCCName</key>
+			<string>ProjectListening</string>
+		</dict>
+	</array>
+</dict>
+</plist>

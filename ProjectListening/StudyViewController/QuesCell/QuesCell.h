@@ -26,6 +26,7 @@
 @property (retain, nonatomic) NSMutableArray *answerArray;
 @property (retain, nonatomic) NSMutableArray *selectArray;
 @property (assign) int quesIndex;
+@property (assign) int PartType;
 @property (assign) CGFloat textHeight;
 //@property (nonatomic, retain) DACircularProgressView *progressView;
 

@@ -21,6 +21,7 @@
 #import "JLPTImageCell.h"
 #import "ToeicCell.h"
 #import "HSKCell.h"
+#import "CET4Cell.h"
 
 #define TAG_TEXT_TABLE      11
 #define TAG_QUES_TABLE      12
@@ -347,10 +348,14 @@ typedef enum {
     //设置播放器委托,并初始化一些设置
     _audioPlayer.delegate = self;
     TextAndQuesClass *TAQ = [self getCurrTAQ];
+    //播放器句子时间数组
     NSMutableArray *times = [TAQ timingArray];
     [_audioPlayer initializeAudioPlayer];
 //    [_audioPlayer playSoundByAudioName:TAQ.soundName timeArray:times lastTimePoint:0];
-    [_audioPlayer playSoundWithAudioName:TAQ.soundName packName:TAQ.packName isFree:TAQ.isFree timeArray:times lastTimePoint:0];
+    if (TAQ.partType==9403) {
+        [_audioPlayer PlayCsoundwithAudioName :@"C1.mp3" packName:TAQ.packName isFree:TAQ.isFree timeArray:times lastTimePoint:0];
+    }else{
+        [_audioPlayer playSoundWithAudioName:TAQ.soundName packName:TAQ.packName isFree:TAQ.isFree timeArray:times lastTimePoint:0];}
     [_audioPlayer fireSliderTimer:YES];
     
     if (!TAQ.isVip) {
@@ -699,6 +704,17 @@ typedef enum {
     [selArray replaceObjectAtIndex:selectIndex withObject:[NSNumber numberWithBool:YES]];
 }
 
+-(void) updateUserAnswerArrayByQuesIndex:(int)QuesIndex :(NSString *)UserAnswer{
+//    NSString * answer = [[[self getCurrTAQ] UserAnswer] objectAtIndex:QuesIndex-1]
+//    answer = UserAnswer ;
+    [[[self getCurrTAQ] UserAnswer] replaceObjectAtIndex:QuesIndex-1 withObject:UserAnswer];
+
+}
+
+-(void) updateHelperTextArrayByQuesIndex :(int )QuesIndex :(NSString *)Helpertext{
+    [[[self getCurrTAQ] HelperTextArray] replaceObjectAtIndex:QuesIndex-1 withObject:Helpertext];
+
+}
 - (void)setTextShowStyle {
     
     NSArray *barBtns = [self.navBar.navItem rightBarButtonItems];
@@ -1540,6 +1556,22 @@ typedef enum {
     return ansText;
 }
 
+-(NSString *)getAnswerByRow:(NSInteger)row{
+    TextAndQuesClass *TAQ = [self getCurrTAQ];
+   // NSMutableArray *answerArray = [[TAQ answerArray] objectAtIndex:row];
+   // int count = [answerArray count];
+    NSString *answer = [[TAQ CorrectAnswer] objectAtIndex:row];
+       return answer;
+
+
+}
+
+-(NSNumber *) getIsSingleByRow :(NSInteger)row{
+    TextAndQuesClass *TAQ = [self getCurrTAQ];
+    NSNumber *isSingle = [[TAQ IsQuestionSingle] objectAtIndex:row];
+    return isSingle ;
+}
+
 - (CGFloat)getBtnHeightByBtnNum:(int)num {
     int rows = (int)ceilf(num / 4.0);
     
@@ -1598,7 +1630,7 @@ typedef enum {
         /*******取得问题信息*************/
         sqlite3_stmt *stmtAnswer;
         //get Answer
-        NSString *getAnswer = [NSString stringWithFormat:@"SELECT QuesText, QuesImage, AnswerNum, Sound, IsSingle, AnswerText, Answer, QuesIndex , KeyWord1, KeyWord2 , KeyWord3 FROM Answer WHERE TestType = %d AND TitleNum = %d AND QuesIndex > 0 AND QuesIndex <= %d ORDER BY QuesIndex;", TEST_TYPE, num, quesNum];
+        NSString *getAnswer = [NSString stringWithFormat:@"SELECT QuesText, QuesImage, AnswerNum, Sound, IsSingle, AnswerText, Answer, QuesIndex , KeyWord1, KeyWord2 , KeyWord3, PartType FROM Answer WHERE TestType = %d AND TitleNum = %d AND QuesIndex > 0 AND QuesIndex <= %d ORDER BY QuesIndex;", TEST_TYPE, num, quesNum];
         if (sqlite3_prepare_v2(_database, [getAnswer UTF8String], -1, &stmtAnswer, nil) != SQLITE_OK) {
             sqlite3_close(_database);
             NSAssert(NO, @"查询句子信息失败");
@@ -1608,7 +1640,8 @@ typedef enum {
         NSArray *quesImgNameArray = nil;
         int answerNum;
         NSString *quesSoundName = @"";
-        BOOL isSingle = YES;
+        //BOOL isSingle = YES;
+        int isSingle = 0;
         NSMutableArray *ansTextArray = [NSMutableArray array];
         NSMutableArray *answerArray = nil;
         NSMutableArray *selectArray = nil;
@@ -1637,8 +1670,10 @@ typedef enum {
             if (qSoundName != NULL) {
                 quesSoundName = [NSString stringWithUTF8String:(char *)sqlite3_column_text(stmtAnswer, 3)];
             }
+            isSingle = sqlite3_column_int(stmtAnswer, 4);
+           // NSLog(@"######%d", isSingle);
             
-            isSingle = (sqlite3_column_int(stmtAnswer, 4) == 1 ? YES : NO);
+            NSNumber * isSingleFlag =[[NSNumber alloc] initWithInt:isSingle];
             if(isSingle){
                 ansText = (char *)sqlite3_column_text(stmtAnswer, 5);
                 if (ansText != NULL) {
@@ -1653,21 +1688,56 @@ typedef enum {
                     [selectArray addObject:[NSNumber numberWithBool:NO]];
                 }
                 
+
+                
+                int parttype = sqlite3_column_int(stmtAnswer, 11);
+                
                 [TAQ.quesTextArray addObject:quesText];
                 //            [TAQ.quesImgNameArray addObject:quesImgNameArray];
                 TAQ.quesImgNameArray = quesImgNameArray;
                 [TAQ.quesSoundNameArray addObject:quesSoundName];
                 [TAQ.ansNumArray addObject:[NSNumber numberWithInt:answerNum]];
-                [TAQ.ansIsSingleArray addObject:[NSNumber numberWithBool:isSingle]];
+                [TAQ.IsQuestionSingle addObject:isSingleFlag];
+                [TAQ.IsQuestionSingle addObject:isSingleFlag];
                 [TAQ.ansTextArray addObject:ansTextArray];
                 [TAQ.answerArray addObject:answerArray];
                 [TAQ.selectArray addObject:selectArray];
+                TAQ.partType = parttype;
+                
             }else{
-                NSString *correctanswer = sqlite3_column_text(stmtAnswer, 6);
-                NSString *keyword1 = sqlite3_column_text(stmtAnswer, 8);
-                NSString *keyword2 = sqlite3_column_text(stmtAnswer, 9);
-                NSString *keyword3 = sqlite3_column_text(stmtAnswer, 10);
-                NSString *useranswer = @"";
+                selectArray = [NSMutableArray arrayWithCapacity:answerNum];
+                for (int i = 0; i < answerNum; i++) {
+                    [selectArray addObject:[NSNumber numberWithBool:NO]];
+                }
+                NSMutableArray * Answer = [NSMutableArray arrayWithCapacity:answerNum];
+                for (int i = 0; i < answerNum; i++) {
+                    [selectArray addObject:[NSNumber numberWithBool:YES]];
+                }
+//                int answerTAG =sqlite3_column_int(stmtAnswer, 2);
+                NSString *correctanswer = [NSString stringWithUTF8String:(char *)sqlite3_column_text(stmtAnswer, 6)];
+                NSString *keyword1 =  [NSString stringWithUTF8String:(char *)sqlite3_column_text(stmtAnswer, 8)];
+                NSString *keyword2 =  [NSString stringWithUTF8String:(char *)sqlite3_column_text(stmtAnswer, 9)];
+                NSString *keyword3 =  [NSString stringWithUTF8String:(char *)sqlite3_column_text(stmtAnswer, 10)];
+                NSString *keywords = @"";
+                if (![keyword1 isEqualToString:@""]) {
+                  keywords =  [NSString stringWithFormat:@"%@++%@++%@",keyword1,keyword2,keyword3];
+                }
+               NSString * SoundName = [NSString stringWithUTF8String:(char *)sqlite3_column_text(stmtAnswer, 3)];
+                NSString * usweranswer = @"";
+                NSString * helpertext= @"";
+                int parttype = sqlite3_column_int(stmtAnswer, 11);
+                [TAQ.answerArray addObject:Answer];
+                [TAQ.ansNumArray addObject:[NSNumber numberWithInt:answerNum]];
+                [TAQ.quesTextArray addObject:quesText];
+                [TAQ.CorrectAnswer addObject:correctanswer];
+                [TAQ.KeyWords addObject:keywords];
+                [TAQ.UserAnswer addObject:usweranswer];
+                [TAQ.IsQuestionSingle addObject:isSingleFlag];
+                [TAQ.quesSoundNameArray addObject:SoundName];
+                [TAQ.selectArray addObject:selectArray];
+                [TAQ.HelperTextArray addObject:helpertext];
+                TAQ.partType = parttype;
+
             }
             
             
@@ -1690,7 +1760,7 @@ typedef enum {
     
     int count = [_TAQArray count];
     for (int i = 0; i < count; i++) {
-        
+        NSLog(@"i= %d",i);
         TextAndQuesClass *TAQ = [_TAQArray objectAtIndex:i];
         
         /*******TitleInfo*************/
@@ -1837,7 +1907,6 @@ typedef enum {
 
 #pragma mark - Table view data source
 
-
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
     if (tableView.tag == TAG_TEXT_TABLE) {
@@ -1863,6 +1932,7 @@ typedef enum {
     
     int row = indexPath.row;
     TextAndQuesClass *TAQ = [self getCurrTAQ];
+    
     
     CGFloat height = 200;
     if (tableView.tag == TAG_TEXT_TABLE) {
@@ -1954,7 +2024,17 @@ typedef enum {
                     NSAssert(NO, @"HSK PartType error");
                     break;
             }
-        } else {
+        } else if([TestType isCET4]){
+            CET4Cell *cell = (CET4Cell *)[self tableView:tableView cellForRowAtIndexPath:indexPath];
+            if (cell.PartType == 9403) {
+                return cell.textHeight;
+            }else{
+                
+               return cell.textHeight + CELL_CONTENT_MARGIN + btnHeight;
+            }
+            
+            
+        }else {
             NSString *quesText = [self getQuesTextByRow:row];
             NSString *answerText = [self getAnswerTextByRow:row];
             
@@ -2057,7 +2137,10 @@ typedef enum {
             HSKCell *cell = [self HSKCellForRow:row tableView:tableView TAQ:currTAQ];
             return cell;
             
-        } else {
+        } else if([TestType isCET4]){
+            CET4Cell *cell = [self CET4CellForRow:row tableView:tableView TAQ:currTAQ];
+            return cell;
+        }else {
             QuesCell *cell = [self NormalCellForRow:row tableView:tableView TAQ:currTAQ];
             return cell;
 //            NSAssert(NO, @"没有正确的Cell可以加载");
@@ -2341,12 +2424,95 @@ typedef enum {
     CGFloat qHeight = [ZZPublicClass getTVHeightByStr:quesText constraintWidth:QUES_WIDTH_LIMIT isBold:YES];
     CGFloat aHeight = [ZZPublicClass getTVHeightByStr:answerText constraintWidth:QUES_WIDTH_LIMIT isBold:NO];
     [cell setAnswerBtnLayoutByNum:ansNum height:qHeight + aHeight answers:currAnswerArray selects:currSelectArray];
-    
+    if(TAQ.partType==9402){
+        [cell.quesPlayBtn setHidden:YES];
+    }
     return cell;
 }
 
 //CET4的Cell
+-(CET4Cell *) CET4CellForRow :(int)row tableView:(UITableView *)tableView TAQ:(TextAndQuesClass *)TAQ{
+    NSNumber *currentIsSingle = [self getIsSingleByRow:row];
+    NSNumber *NumberOne = [[NSNumber alloc] initWithInt:1];
+    if([currentIsSingle isEqualToNumber:NumberOne])
+    {
+        int parttype = [TAQ partType];
+        CET4Cell * cell = (CET4Cell *)[self NormalCellForRow:row tableView:tableView TAQ:TAQ];
+        cell.PartType =parttype;
+        
+        return cell;
+    }else{
+        int parttype = TAQ.partType;
+//        NSMutableArray *currAnswerArray = [[TAQ UserAnswer] objectAtIndex:row];
+//        NSMutableArray *currSelectArray = [[TAQ selectArray] objectAtIndex:row];
+        int settextornot = 0;
+        NSString * UserAnswer = [[TAQ UserAnswer] objectAtIndex:row];
+        NSString * helpertext = [[TAQ HelperTextArray]objectAtIndex:row];
+        NSString * sorry =NSLocalizedString(@"SORRY_FIGHT", Nil);
+        if([helpertext isEqualToString:sorry]){
+            settextornot = 1;
+        }
+        NSString *QuesCellIdentifier = [NSString stringWithFormat:@"CETPartC"];
+        CET4Cell *cell = (CET4Cell *)[tableView dequeueReusableCellWithIdentifier:QuesCellIdentifier];
+        cell.PartType =parttype;
+                [cell setUserAnswer:UserAnswer];
+        NSString *quesText = [self getQuesTextByRow:row];
+        NSString *answer = [self getAnswerByRow:row];
+              NSString *keywords = [[TAQ KeyWords] objectAtIndex:row];
+        if (!cell) {
+            cell = (CET4Cell *)[[[NSBundle mainBundle] loadNibNamed:@"CET4Cell" owner:nil options:nil] objectAtIndex:(IS_IPAD ? 1 : 0)];
+            
+            cell.ParentVC = self;
+            cell.QuestionTextView.parentVC = self;
+            cell.HelperTextView.parentVC = self;
+             [cell setCorrectAnswer:answer];
+            //设置字体
+            cell.QuestionTextView.font = [UIFont fontWithName:FONT_NAME size:self.userFontSizeReal];
+            cell.HelperTextView.font = [UIFont fontWithName:FONT_NAME_BOLD size:self.userFontSizeReal];
+            
+           
+            [cell addQuesPlayBtnToCell];
+            [cell setQuestionTextView:quesText quesIndex:row+1];
+            [cell addQuesPlayBtnToCell];
+            [cell setEnterFieldHeight];
+            [cell setQuesPlayButtonHeight];
+            [cell setDoneButtonHeight];
+            if(![keywords isEqualToString:@""]){
+                
+                [cell setKeyWords:keywords];
+                [cell setNumberOfKeyWords:3];
+            }else{
+                [cell setNumberOfKeyWords:0];
+            }
 
+        }
+        if (_currQuesPlayIndex == row + 1) {
+            [cell isQuesAudioPlaying:YES];
+        } else {
+            [cell isQuesAudioPlaying:NO];
+        }
+       
+        
+//        NSLog(@"cell.textview.y:%f,cell.enterfield.y:%f",cell.QuestionTextView.frame.origin.y,cell.AnswerField.frame.origin.y);
+//        [cell.QuestionTextView setText:quesText];
+//
+        
+        [cell setQuesIndex:row+1];
+        
+        
+        
+        [cell setAnswerFieldBytext:UserAnswer];
+        if (settextornot == 1) {
+            [cell setHelperTextBytext:helpertext];
+        }
+        
+ return cell;
+    }
+    
+    
+    
+
+}
 
 #pragma mark - audioPlayerDelegate
 - (void)setQuesAudioStop {
@@ -2450,6 +2616,7 @@ typedef enum {
         
     }
     if (_currentIndex >= _lastIndex) {
+        //设置最后一题
         [_audioPlayer.nextQuesBtn setEnabled:NO];
     }
     

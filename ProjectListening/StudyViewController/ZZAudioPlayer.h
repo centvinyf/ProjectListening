@@ -80,5 +80,6 @@
 - (BOOL)isZZAudioPlaying;
 
 - (void)playSoundWithAudioName:(NSString *)audioName packName:(NSString *)packName isFree:(BOOL)isFree timeArray:(NSMutableArray *)timingArray lastTimePoint:(NSTimeInterval)playTime;
+-(void) PlayCsoundwithAudioName:(NSString *)audioName packName:(NSString *)packName isFree:(BOOL)isFree timeArray:(NSMutableArray *)timingArray lastTimePoint:(NSTimeInterval)playTime;
 
 @end

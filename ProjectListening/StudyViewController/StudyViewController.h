@@ -46,6 +46,8 @@ typedef enum {
 
 - (void)showOrHideTextTable;
 - (void)updateUserSelectArrayByQuesIndex:(int)quesIndex ansBtnIndex:(int)selectIndex;
+-(void) updateUserAnswerArrayByQuesIndex:(int)QuesIndex :(NSString *)UserAnswer;
+-(void) updateHelperTextArrayByQuesIndex :(int )QuesIndex :(NSString *)Helpertext;
 //- (void)updateFavoriteSentencesBySenIndex:(int)senIndex;
 - (NSString *)getWordTranslateBy:(NSString *)EnStr;
 - (void)catchAWordToShow:(NSString *)word;

@@ -272,6 +272,7 @@
         case TestTypeJLPT3:
         case TestTypeToefl:
         case TestTypeToeic:
+        case TestTypeCET4:
             isHas = YES;
             break;
             
@@ -282,7 +283,7 @@
         case TestTypeHSK5:
         case TestTypeHSK6:
         case TestTypeTEM4:
-        case TestTypeCET4:
+//        case TestTypeCET4:
             isHas = NO;
             break;
         default:
@@ -353,6 +354,8 @@
         case TestTypeToeic:
             testInfoID = @"295451";
 //            testInfoID = @"242141";
+        case TestTypeCET4:
+            testInfoID= @"242141";
             break;
             
             
@@ -364,7 +367,7 @@
         case TestTypeHSK5:
         case TestTypeHSK6:
         case TestTypeTEM4:
-            case TestTypeCET4:
+           
             testInfoID = @"0";
             break;
         default:

@@ -42,15 +42,15 @@
     
     [ZZPublicClass setBackButtonOnTargetNav:self action:@selector(backToTop)];
     
-    NSString *imgName = nil;
-    if (IS_IPAD) {
-        imgName = @"aboutIyuba~ipad.png";
-    } else if (IS_IPHONE_568H) {
-        imgName = @"aboutIyuba-568h@2x.png";
-    } else {
-        imgName = @"aboutIyuba.png";
-    }
-    [self.imgView setImage:[UIImage imageNamed:imgName]];
+//    NSString *imgName = nil;
+//    if (IS_IPAD) {
+//        imgName = @"aboutIyuba~ipad.png";
+//    } else if (IS_IPHONE_568H) {
+//        imgName = @"aboutIyuba-568h@2x.png";
+//    } else {
+//        imgName = @"aboutIyuba.png";
+//    }
+//    [self.imgView setImage:[UIImage imageNamed:imgName]];
 }
 
 - (void)backToTop {

@@ -266,10 +266,12 @@ void uncaughtExceptionHandler(NSException *exception) {
     }
     
     [_rootTabBarController.tabBar setBackgroundImage:tabarImg];
+    _rootTabBarController.wantsFullScreenLayout =YES;
     [self appearenceTabbar:_rootTabBarController];
     [self.window addSubview:_rootTabBarController.view];
-    
-    
+    [self.window setFrame:[UIScreen mainScreen].bounds];
+    NSLog(@"self.window:%f",self.window.frame.size.height);
+
     [self.window makeKeyAndVisible];
 	
 	// Default texture format for PNG/BMP/TIFF/JPEG/GIF images

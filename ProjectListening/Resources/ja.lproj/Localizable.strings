@@ -169,3 +169,9 @@
 "INDICATOR_NET_ERROR" = "ネットワークエラー";
 "INDICATOR_NET_NOT_CONNECT" = "ネットワークにつながりません";
 "SEND" = "送信";
+
+//填空题
+"CONGRATULATIONS"               = "Congratulations! You've got it!";
+"SORRY_FIGHT"                   = "Sorry, You may try again.";
+"RIGHTNUMBER"                   = "The number of keywords that you caught is:";
+"KEY_WORDS_ARE"                 = "All keywords are：";

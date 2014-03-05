@@ -35,10 +35,21 @@
         _ansTextArray = [[NSMutableArray alloc] init];
         _answerArray = [[NSMutableArray alloc] init];
         _quesSoundNameArray = [[NSMutableArray alloc] init];
-//        _ansIsSingleArray = [[NSMutableArray alloc] init];
+        _ansIsSingleArray = [[NSMutableArray alloc] init];
         
         //select
         _selectArray = [[NSMutableArray alloc] init];
+        
+        //isquestionsingla
+        _IsQuestionSingle = [[NSMutableArray alloc]init];
+        
+        //keywords
+        _KeyWords = [[NSMutableArray alloc] init];
+        
+        _CorrectAnswer = [[NSMutableArray alloc]init];
+        _UserAnswer = [[NSMutableArray alloc]init];
+        
+        _HelperTextArray = [[NSMutableArray alloc]init];
         
         //favorite sentence
 //        _favSenArray = [[NSMutableArray alloc] init];

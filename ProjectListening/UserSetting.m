@@ -594,20 +594,22 @@
 + (TextShowStyleTags)textShowStyle {
     
     TextShowStyleTags showStyle = [[NSUserDefaults standardUserDefaults] integerForKey:kTextShowStyle];
-    
+    NSLog(@"############%d",[[NSUserDefaults standardUserDefaults] integerForKey:@"qwer"]);
     
     
     switch (showStyle) {
-        case TextShowStyleAll:
-            showStyle = TextShowStyleAll;
-            break;
-            
-        case TextShowStyleNone:
+        case TextShowStyleNone :
             showStyle = TextShowStyleNone;
             break;
+            
+        
         case TextShowStylePart:
-        default:
             showStyle = TextShowStylePart;
+            break;
+        case TextShowStyleAll   :
+            
+        default:
+            showStyle = TextShowStyleAll;
             break;
     }
     

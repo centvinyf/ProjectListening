@@ -9,9 +9,9 @@
 #import <Foundation/Foundation.h>
 
 typedef enum {
-    TextShowStylePart,
-    TextShowStyleAll,
     TextShowStyleNone,
+    TextShowStyleAll,
+    TextShowStylePart,
 }TextShowStyleTags;
 
 @interface UserSetting : NSObject
